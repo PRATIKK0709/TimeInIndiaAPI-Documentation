@@ -59,6 +59,25 @@ print("Time in 24-hour format:", data["time_24hr_format"])
 print("Time in 12-hour format:", data["time_12hr_format"])
 ```
 
+### Javascript (requests)
+
+```
+const url = 'https://timeinindiaapi.onrender.com/get_time';
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Time in 24-hour format:', data.time_24hr_format);
+    console.log('Time in 12-hour format:', data.time_12hr_format);
+  })
+  .catch(error => console.error('Error:', error));
+```
+
 ## Notes
 
 - All times are provided in the Indian timezone (Asia/Kolkata).
